@@ -13,7 +13,15 @@ def populate():
     add_employee(first_name="John",
                  last_name="Doe",
                  id="0937298",
-                 location="Germany, Berlin")
+                 location="Germany,Berlin")
+    add_employee(first_name="Ella",
+                 last_name="Higgins",
+                 id="4532294",
+                 location="Split,Croatia")
+    add_employee(first_name="Steve",
+                 last_name="Andrews",
+                 id="2053241",
+                 location="Scotland,Glasgow")
 
 
     for e in Employee.objects.all():
