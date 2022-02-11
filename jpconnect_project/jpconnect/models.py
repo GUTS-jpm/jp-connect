@@ -8,4 +8,4 @@ class Employee(models.Model):
     location = CharField(max_length=128, unique=False)
 
     def __str__(self):
-        return (self.id, self.first_name, self.last_name, self.location)
+        return self.id+", "+self.first_name+", "+self.last_name+", "+self.location

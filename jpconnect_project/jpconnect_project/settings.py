@@ -15,17 +15,11 @@ import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(file).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'jpconnect/template')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [STATIC_DIR, ]
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o59isj(&)on^xg*=@5&26yv4!^4^ztgb6z=c_k(7h*m$9!g&f-'
+SECRET_KEY = 'django-insecure-o59isj(&)on^xg=@5&26yv4!^4^ztgb6z=c_k(7hm$9!g&f-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -56,7 +50,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'jpconnect_project.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -118,7 +111,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

@@ -41,11 +41,11 @@ def news(request):
     title4=my_dict['data'][3]['title']
     title5=my_dict['data'][4]['title']
 
-    description1=my_dict['data'][0]['description']
-    description2=my_dict['data'][1]['description']
+    description1=my_dict['data'][0]['snippet']
+    description2=my_dict['data'][1]['snippet']
     description3=my_dict['data'][2]['snippet']
-    description4=my_dict['data'][3]['description']
-    description5=my_dict['data'][4]['description']
+    description4=my_dict['data'][3]['snippet']
+    description5=my_dict['data'][4]['snippet']
 
     url1=my_dict['data'][0]['url']
     url2=my_dict['data'][1]['url']
