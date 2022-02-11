@@ -23,3 +23,6 @@ def news(request):
 
     print(data.decode('utf-8'))
     return render(request, 'news.html')
+
+def weather(request):
+    return render(request, 'weather.html')
