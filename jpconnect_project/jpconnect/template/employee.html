@@ -15,8 +15,9 @@
         It is currently {{temp_c}}°C <img src={{img}}> in {{employee.location}}<br>
         Here are the top news stories in {{employee.first_name}}'s area:<br>
         {% for article in articles %}
-            <strong>{{article.title}}</strong><br>
-            {{article.desc}}<br><br>
+            <a href="{{article.url}}"><strong>{{article.title}}</strong><br>
+            {{article.desc}}<br><br></a>
+            <img src="{{article.img}}" style="max-width:20%;"><br>
         {% endfor %}
     {% endif %}
 {% endblock %}

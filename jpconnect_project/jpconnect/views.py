@@ -131,9 +131,9 @@ def show_name(request, name_slug):
     conn = http.client.HTTPSConnection('api.weatherapi.com')
     params = urllib.parse.urlencode({
         'key': '0bdcd5c3dd934722a2c185317221102',
-        "q" : employee.location,
+        "q" : employee.location.split()[0],
         })
-    print(employee.location)
+    print(employee.location.split()[0])
     conn.request('GET', '/v1/current.json?{}'.format(params))
     res = conn.getresponse()
     data = res.read()
