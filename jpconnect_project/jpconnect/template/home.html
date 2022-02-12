@@ -22,17 +22,15 @@
       <th>Name</th>
       <th>Location</th>
   </tr>
-  <tr>
 
   {% for employee in employees %}
-
+  <tr>
       <td>{{ employee.id }}</td>
       <td>{{employee.first_name}} {{employee.last_name}}</td>
       <td>{{employee.location}}</td>
-
+    </tr>
   {% endfor %}
 
-  </tr>
 
 
 
