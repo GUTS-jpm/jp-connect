@@ -16,23 +16,26 @@
 
 {% block body_block %}
     {% if employee %}
+        <center>
+            <h1  style="text-decoration: underline;"> {{employee.first_name}} {{employee.last_name}}</h1><br>
+            
+            <h2>{{employee.location}}</h2>
 
-        {{employee.first_name}} {{employee.last_name}} is currently in {{employee.location}}. It is <b>{{temp_c}}°C</b>
-
-        <img src={{img}}>
-
-        <br>
-
-        Here are the top news stories in {{employee.first_name}}'s area:
-
-        <br>
+            <span style="font-size: 100px;">{{temp_c}}<sup style="font-size: 25px;">°C</sup></span>
+                
+            <img src={{img}}  height="130" style="align-self: right; vertical-align: top;" alt="{{condition}}">
+            <br>
+        
+        <hr width="80%">
+        
+        
         
         <div class="slideshow-container">
         {% for article in articles %}
             <div class="mySlides fade">
                 <div class="numbertext">{{ forloop.counter }} / 5</div>
                 <img src={{article.img}} style="width:100%">
-                <div class="text">{{article.title}}</div>
+                <div class="text"><bold>{{article.title}}</bold></div><br>
                 <div>{{article.desc}}</div>
             </div>
         {% endfor %}
@@ -46,6 +49,7 @@
             <span class="dot" onclick="currentSlide(4)"></span>
             <span class="dot" onclick="currentSlide(5)"></span>
         </div>
+        </center>
         <script>
             var slideIndex = 1;
             showSlides(slideIndex);
