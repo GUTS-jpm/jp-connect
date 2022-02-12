@@ -160,7 +160,6 @@ def show_name(request, name_slug):
     res = conn.getresponse()
     data = res.read()
     my_dict=json.loads(data)
-    print(my_dict)
     articles=[]
     for i in range(5):
         articles.append({"title": my_dict['data'][i]['title'], "desc": my_dict['data'][i]['snippet'],

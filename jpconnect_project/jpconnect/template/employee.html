@@ -35,7 +35,7 @@
             <div class="mySlides fade">
                 <div class="numbertext">{{ forloop.counter }} / 5</div>
                 <img src={{article.img}} style="width:100%">
-                <div class="text"><bold>{{article.title}}</bold></div><br>
+                <div class="text"><bold><a href="{{article.url}}" style="text-decoration: none; color: black;">{{article.title}}</a></bold></div><br>
                 <div>{{article.desc}}</div>
             </div>
         {% endfor %}
