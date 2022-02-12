@@ -118,3 +118,12 @@ def weather(request):
 
 
 def show_name(request, name_slug):
+    context_dict = {}
+    try:
+        employee = Employees.objects.get(id=name_slug)
+        context_dict['employee'] = employee
+    except Employees.DoesNotExist:
+        context_dict['employee'] = None
+
+    return render(request, 'employee.html', context=context_dict)
+        

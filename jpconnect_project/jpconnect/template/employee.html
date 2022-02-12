@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_block %}
+    Employee
+{% endblock %}
+
+{% block body_block %}
+    {% if employee %}
+        <p>{{employee}}</p><br>
+    {% endif %}
+{% endblock %}
