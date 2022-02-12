@@ -98,13 +98,17 @@ def weather(request):
 
     # Opening JSON file
     my_dict=json.loads(data)
-    temp = my_dict['current']['temp_c']
+    temp_c = my_dict['current']['temp_c']
+    temp_f = my_dict['current']['temp_f']
     condition = my_dict['current']['condition']['text']
     img = my_dict['current']['condition']['icon']
-    speed = my_dict['current']['wind_kph']
+    speed_kph = my_dict['current']['wind_kph']
+    speed_mph = my_dict['current']['wind_mph']  
     context_dict = {}
-    context_dict['temp'] = temp
+    context_dict['temp_c'] = temp_c
+    context_dict['temp_f'] = temp_f
     context_dict['condition'] = condition
     context_dict['img'] = img
-    context_dict['speed'] = speed
+    context_dict['speed_kph'] = speed_kph
+    context_dict['speed_mph'] = speed_mph
     return render(request, 'weather.html', context_dict)
