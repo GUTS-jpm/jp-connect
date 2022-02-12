@@ -38,7 +38,7 @@ def populate():
                  last_name="Mitchel",
                  id="9234554",
                  location="Stockholm, Sweden")
-    add_employee(first_name="Micheal",
+    add_employee(first_name="Michael",
                  last_name="Scott",
                  id="2345434",
                  location="Madrid, Spain")
@@ -46,6 +46,22 @@ def populate():
                  last_name="Moor",
                  id="4542104",
                  location="Geneva, Switzerland")
+    add_employee(first_name="Allan",
+                 last_name="Huynh",
+                 id="1523503",
+                 location="Sydney, Australia")
+    add_employee(first_name="Vanesa",
+                 last_name="Webster",
+                 id="1523503",
+                 location="Mumbai, India")
+    add_employee(first_name="Glen",
+                 last_name="Hogg",
+                 id="1553332",
+                 location="Manila, Philippines")
+    add_employee(first_name="Otis",
+                 last_name="Bishop",
+                 id="2367242",
+                 location="Seoul, South Korea")
 
 
 
