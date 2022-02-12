@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import http.client, urllib.parse
+import json
 
 from matplotlib.pyplot import title
 
@@ -9,8 +10,6 @@ def home(request):
     return render(request, 'home.html')
 
 def news(request):
-    import http.client, urllib.parse
-    import json
     conn = http.client.HTTPSConnection('api.thenewsapi.com')
 
     params = urllib.parse.urlencode({
@@ -85,4 +84,26 @@ def news(request):
     return render(request, 'news.html', context_dict)
 
 def weather(request):
-    return render(request, 'weather.html')
+    conn = http.client.HTTPSConnection('api.weatherapi.com')
+    params = urllib.parse.urlencode({
+        'key': '0bdcd5c3dd934722a2c185317221102',
+        "q" : "Glasgow",
+        })
+
+    conn.request('GET', '/v1/current.json?{}'.format(params))
+
+    res = conn.getresponse()
+    data = res.read()
+
+    # Opening JSON file
+    my_dict=json.loads(data)
+    temp = my_dict['current']['temp_c']
+    condition = my_dict['current']['condition']['text']
+    img = my_dict['current']['condition']['icon']
+    speed = my_dict['current']['wind_kph']
+    context_dict = {}
+    context_dict['temp'] = temp
+    context_dict['condition'] = condition
+    context_dict['img'] = img
+    context_dict['speed'] = speed
+    return render(request, 'weather.html', context_dict)
