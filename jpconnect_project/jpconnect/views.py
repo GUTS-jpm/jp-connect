@@ -1,13 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 import http.client, urllib.parse
 import json
 
 from matplotlib.pyplot import title
+from .models import Employees
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    employees = Employees.objects.all()
+    return render(request, 'home.html', {'employees': employees})
 
 def news(request):
     # conn = http.client.HTTPSConnection('api.thenewsapi.com')
@@ -31,9 +33,9 @@ def news(request):
 
     # Opening JSON file
     my_dict=json.loads(data)
-    
+
     context_dict = {}
-    
+
     # print (my_dict['data'][x]['title'])
     title1=my_dict['data'][0]['title']
     title2=my_dict['data'][1]['title']
@@ -58,7 +60,7 @@ def news(request):
     img3=my_dict['data'][2]['image_url']
     img4=my_dict['data'][3]['image_url']
     img5=my_dict['data'][4]['image_url']
-    
+
     context_dict["title1"] = title1
     context_dict["title2"] = title2
     context_dict["title3"] = title3
@@ -103,7 +105,7 @@ def weather(request):
     condition = my_dict['current']['condition']['text']
     img = my_dict['current']['condition']['icon']
     speed_kph = my_dict['current']['wind_kph']
-    speed_mph = my_dict['current']['wind_mph']  
+    speed_mph = my_dict['current']['wind_mph']
     context_dict = {}
     context_dict['temp_c'] = temp_c
     context_dict['temp_f'] = temp_f

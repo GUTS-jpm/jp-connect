@@ -7,5 +7,9 @@
 
 
 {% block body_block %}
-    hi
+    {% if employees %}
+      {% for employee in employees %}
+        <p>{{employee}}</p><br>
+      {% endfor %}
+    {% endif %}
 {% endblock %}
