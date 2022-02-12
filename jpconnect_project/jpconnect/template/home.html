@@ -11,15 +11,13 @@
     <table>
     <tr>
       <th>ID</th>
-      <th>First name</th>
-      <th>Surname</th>
+      <th>Name</th>
       <th>Location</th>
     </tr>
     {% for employee in employees %}
     <tr>
-      <td><a href="{% url 'jpconnect:show_name' employee.id %}"><p>{{employee.id}}</p><br></a></td>
-      <td>{{ employee.first_name }}</td>
-      <td>{{ employee.last_name }}</td>
+      <td><a href="{% url 'jpconnect:show_name' employee.id %}"><p>{{employee.id}}</p></a></td>
+      <td>{{ employee.first_name }} {{employee.last_name}}</td>
       <td>{{ employee.location}}</td>
     </tr>
     {% endfor %}
