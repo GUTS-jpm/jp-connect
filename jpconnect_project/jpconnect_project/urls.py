@@ -24,4 +24,5 @@ urlpatterns = [
     path('jpconnect/', include('jpconnect.urls')),
     path('admin/', admin.site.urls),
     path('news/', views.news, name='news'),
+    path('search/', views.Search, name='search'),
 ]

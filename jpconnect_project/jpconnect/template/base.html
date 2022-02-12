@@ -18,6 +18,11 @@
             <li><a href="{% url 'jpconnect:home' %}">Home</a></li>
             <li><a href="{% url 'jpconnect:news' %}">News</a></li>
             <li><a href="{% url 'jpconnect:weather' %}">Weather</a></li>
+            <li><form action="{% url 'search' %}" method="post">
+                {% csrf_token %}
+                <input name="q" type="text" placeholder="Search...">
+                </form> 
+            </li>
         </ul>     
         {% block body_block %}
         {% endblock %}

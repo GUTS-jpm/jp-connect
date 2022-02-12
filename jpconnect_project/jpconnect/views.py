@@ -3,8 +3,12 @@ import http.client, urllib.parse
 import json
 
 from matplotlib.pyplot import title
+
+from jpconnect.forms import SearchForm
 from .models import Employees
 
+from jpconnect.forms import SearchForm
+from django.views.generic import ListView
 
 # Create your views here.
 def home(request):
@@ -164,4 +168,12 @@ def show_name(request, name_slug):
     context_dict["articles"] = articles
 
     return render(request, 'employee.html', context=context_dict)
-        
+    
+def Search(request):
+    context_dict = {}
+    if request.method == 'POST':
+        query = request.POST['q'].strip()
+        if query:
+            object_list = Employees.objects.filter(last_name__icontains=query)
+            context_dict["search_employees"] = object_list
+    return render(request, 'search.html', context=context_dict)

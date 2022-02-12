@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_block %}
+    Search Page
+{% endblock %}
+
+
+{% block body_block %}
+
+
+
+<html>
+<head>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+</head>
+
+
+<body style="background-color:#154C8A;">
+
+<div class="container">
+<table class="table is-fullwidth is-striped is-bordered is-hoverable">
+  <tr class="th">
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Location</th>
+  </tr>
+  
+  {% for employee in search_employees %}
+  <tr>
+      <td><a href="{% url 'jpconnect:show_name' employee.id %}"><p>{{employee.id}}</p></a></td>
+      <td>{{employee.first_name}} {{employee.last_name}}</td>
+      <td>{{employee.location}}</td>
+  </tr>
+  {% endfor %}
+
+
+</table>
+</div>
+</body>
+
+</html>
+{% endblock %}
