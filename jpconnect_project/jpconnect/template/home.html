@@ -8,8 +8,21 @@
 
 {% block body_block %}
     {% if employees %}
-      {% for employee in employees %}
-        <a href="{% url 'jpconnect:show_name' employee.id %}"><p>{{employee}}</p><br></a>
-      {% endfor %}
-    {% endif %}
+    <table>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Surname</th>
+      <th>Location</th>
+    </tr>
+    {% for employee in employees %}
+    <tr>
+      <td><a href="{% url 'jpconnect:show_name' employee.id %}"><p>{{employee.id}}</p><br></a></td>
+      <td>{{ employee.first_name }}</td>
+      <td>{{ employee.last_name }}</td>
+      <td>{{ employee.location}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
 {% endblock %}
