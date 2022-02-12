@@ -30,6 +30,23 @@ def populate():
                  last_name="Litterman",
                  id="2033499",
                  location="New York, USA")
+    add_employee(first_name="James",
+                 last_name="Smith",
+                 id="5425647",
+                 location="Hong Kong, China")
+    add_employee(first_name="Susan",
+                 last_name="Mitchel",
+                 id="9234554",
+                 location="Stockholm, Sweden")
+    add_employee(first_name="Micheal",
+                 last_name="Scott",
+                 id="2345434",
+                 location="Madrid, Spain")
+    add_employee(first_name="Charlotte",
+                 last_name="Moor",
+                 id="4542104",
+                 location="Geneva, Switzerland")
+
 
 
     for e in Employees.objects.all():
