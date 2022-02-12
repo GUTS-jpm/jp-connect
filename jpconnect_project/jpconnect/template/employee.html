@@ -11,6 +11,12 @@
 
 {% block body_block %}
     {% if employee %}
-        <p>{{employee}}</p><br>
+        <h1>{{employee.first_name}} {{employee.last_name}}</h1><br>
+        It is currently {{temp_c}}°C <img src={{img}}> in {{employee.location}}<br>
+        Here are the top news stories in {{employee.first_name}}'s area:<br>
+        {% for article in articles %}
+            <strong>{{article.title}}</strong><br>
+            {{article.desc}}<br><br>
+        {% endfor %}
     {% endif %}
 {% endblock %}
