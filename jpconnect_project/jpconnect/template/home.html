@@ -11,27 +11,25 @@
 
 <html>
 <head>
-<title>A Demo of Basic Bulma Table</title>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 </head>
 <body>
 <div class="container">
-<table class="table">
+<table class="table is-fullwidth is-striped is-bordered">
   <tr class="th">
-      <th>Employee ID<th>
+      <th>Employee ID</th>
       <th>Name</th>
       <th>Location</th>
   </tr>
 
   {% for employee in employees %}
   <tr>
-      <td>{{ employee.id }}</td>
+      <td><a href="{% url 'jpconnect:show_name' employee.id %}"><p>{{employee.id}}</p></a></td>
       <td>{{employee.first_name}} {{employee.last_name}}</td>
       <td>{{employee.location}}</td>
-    </tr>
+  </tr>
   {% endfor %}
-
-
 
 
 </table>
