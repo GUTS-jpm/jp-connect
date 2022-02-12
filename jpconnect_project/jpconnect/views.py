@@ -37,6 +37,7 @@ def news(request):
     context_dict = {}
 
     # print (my_dict['data'][x]['title'])
+    # what the actual fuck is this 
     title1=my_dict['data'][0]['title']
     title2=my_dict['data'][1]['title']
     title3=my_dict['data'][2]['title']
@@ -114,3 +115,6 @@ def weather(request):
     context_dict['speed_kph'] = speed_kph
     context_dict['speed_mph'] = speed_mph
     return render(request, 'weather.html', context_dict)
+
+
+def show_name(request, name_slug):
