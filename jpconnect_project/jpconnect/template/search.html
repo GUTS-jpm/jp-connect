@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 </head>
 
+<br>
 
 <body style="background-color:#154C8A;">
 
@@ -29,7 +30,7 @@
       <th>Name</th>
       <th>Location</th>
   </tr>
-  
+
   {% for employee in search_employees %}
   <tr>
       <td><a href="{% url 'jpconnect:show_name' employee.id %}"><p>{{employee.id}}</p></a></td>
