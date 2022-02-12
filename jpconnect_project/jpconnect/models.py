@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import CharField
 
-class Employee(models.Model):
+class Employees(models.Model):
     first_name = CharField(max_length=128, unique=False)
     last_name = CharField(max_length=128, unique=False)
     id = CharField(max_length=128, unique=True, primary_key=True)
