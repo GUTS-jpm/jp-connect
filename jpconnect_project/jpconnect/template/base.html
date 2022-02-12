@@ -18,7 +18,7 @@
             <li><a href="{% url 'jpconnect:home' %}">Home</a></li>
             <li style="height: 100%; float: right; padding-right: 15px;"><form action="{% url 'search' %}" method="post" style="height: 100%; ">
                 {% csrf_token %}
-                <input name="q" type="text" placeholder="Search..." style="margin-top: 11px; height: 30px; ">
+                <input name="q" type="text" placeholder="Search by Last name..." style="margin-top: 11px; height: 30px; ">
                 </form>
             </li>
         </ul>

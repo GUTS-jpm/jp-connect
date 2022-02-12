@@ -34,3 +34,8 @@ body {
     width: 1000px;
     word-wrap: break-word;
 }
+
+.searchquery{
+    font-family: Verdana, sans-serif;
+    margin:0;
+}
